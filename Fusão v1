@@ -39,7 +39,15 @@ void imprimirArv(no* n){
 void main(){
 	no* nono = criar_no('D',criar_no(('B'),criar_no(('A'),NULL,NULL),criar_no(('C'),NULL,NULL)), criar_no(('F'),criar_no('E',NULL,NULL),criar_no('G',NULL,NULL)));
    
-
-	
-	
+void fusao(){
+    if (n !=NULL){
+        if (n->dir == NULL){
+           n = n ->esq; 
+        } 
+        else
+            if(n-> esq == NULL){
+                n = n -> dir;
+            }
+        else
+        
 }
