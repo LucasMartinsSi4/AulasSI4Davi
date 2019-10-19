@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//http://dainf.ct.utfpr.edu.br/~maurofonseca/lib/exe/fetch.php?media=cursos:if63c:if63ced_04_arvores.pdf
+
+struct noArvovre{
+  char Raiz;
+  struct noArvovre* esq;
+  struct noArvovre* dir;
+};
+
+
+typedef struct noArvovre no;
+
+no* criar_no(char Raiz,no* esq, no* dir){
+	no* n = malloc(sizeof(no ));
+	n -> Raiz = Raiz;
+	n -> esq = esq;
+	n -> dir = dir;
+return n;
+}
+
+char buscaValor(no* n, char valor){
+	if(n == NULL){
+		return 0;
+	}else{
+		return(n->Raiz == valor) || (buscaValor(n->esq,valor)) || (buscaValor(n->dir, valor));
+	}
+} 
+
+
+void imprimirArv(no* n){
+	if (n !=NULL){
+	printf("%c", n -> Raiz );
+	imprimirArv(n -> esq);
+	imprimirArv(n -> dir);
+    }
+}
+void main(){
+	no* nono = criar_no('D',criar_no(('B'),criar_no(('A'),NULL,NULL),criar_no(('C'),NULL,NULL)), criar_no(('F'),criar_no('E',NULL,NULL),criar_no('G',NULL,NULL)));
+   
+
+	
+	
+}
